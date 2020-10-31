@@ -1,0 +1,88 @@
+
+package examenu2;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+/**
+ *
+ * @author DOMINGUEZ CAZALES JENNIFER IRLANDA
+ */
+public class ExamenU2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        //profe si hace lo que pidio pero despues cumplir los 5 de uno repite el anuncio pero hace lo demas
+        //y no para de mostrarlos lo hace infinito
+        //
+        
+        List<Integer> impar = new ArrayList<Integer>();
+        List<Integer> par = new ArrayList<Integer>();
+        System.out.println("Ingresaras 10 numeros en total, 5 numeros pares y 5 numeros impares");
+        pedir(impar,par,0,0,0);
+        // TODO code application logic here
+        //char[][] bomb
+    }
+    private static void pedir(List im,List pa,int contimpar,int contpar,int lol){
+        //contimpar=contimpar-1;
+        //contpar=contpar-1;
+        System.out.println("contimpar"+contimpar);
+        System.out.println("contpar"+contpar);
+        Scanner leer=new Scanner(System.in);
+        int le;
+            if (contimpar<5||contpar<5) {
+                        System.out.println("Ingresa el numero");
+                        le=leer.nextInt();
+                        //llenar lista con numeros pares
+                        if (contpar!=5) {
+                            if (le%2==0) {
+                            pa.add(le);
+                            //contpar=contpar+1;
+                            pedir(im,pa,contimpar,contpar+1,lol);
+                           
+                            }
+                        }
+                        if(contpar==5){//&&contimpar!=5
+                            System.out.println("Ya ingresaste los 5 numeros pares, ahora solo ingresa numeros impares");
+                           // pedir(im,pa,contimpar,contpar);
+                        }
+
+                        //lenar lista con numeros impares
+                        if (contimpar!=5) {
+                            if(le%2!=0){
+                            im.add(le);
+                            //contimpar=contimpar+1;
+                            pedir(im,pa,contimpar+1,contpar,lol);
+                            }    
+                        }
+                        if(contimpar==5){
+                            System.out.println("Ya ingresaste los 5 numeros impares, ahora solo ingresa numeros pares");
+                           // pedir(im,pa,contimpar,contpar);
+                        }
+            }//fin para pedir numeros
+            //mostrar numeros
+             //mostrarimpar,mostrarpar
+             if (contimpar==5&&contpar==5) {
+                 System.out.print(im.get(0));
+                 System.out.print(pa.get(0));
+                 System.out.print(im.get(1));
+                 System.out.print(pa.get(1));
+                 System.out.print(im.get(2));
+                 System.out.print(pa.get(2));
+                 System.out.print(im.get(3));
+                 System.out.print(pa.get(3));
+                 System.out.print(im.get(4));
+                 System.out.print(pa.get(4));
+                 lol=lol+5;
+             }
+           
+             pedir(im,pa,contimpar,contpar,lol);
+        
+       
+        
+        
+    }
+}
