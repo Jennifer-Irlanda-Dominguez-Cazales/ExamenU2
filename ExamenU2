@@ -17,7 +17,8 @@ public class ExamenU2 {
         
         //profe si hace lo que pidio pero despues cumplir los 5 de uno repite el anuncio pero hace lo demas
         //y no para de mostrarlos lo hace infinito
-        //
+        //profe si use recursividad y listas :v 
+        //si paso?
         
         List<Integer> impar = new ArrayList<Integer>();
         List<Integer> par = new ArrayList<Integer>();
